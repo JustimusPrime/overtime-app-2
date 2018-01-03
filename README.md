@@ -16,3 +16,6 @@ x AdminUser -> STI (single table inheritance)
 
 ## UI:
 - Bootstrap -> formatting
+
+## Refactor TODOS:
+- refactor user association integration test in post-spec
