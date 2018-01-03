@@ -19,4 +19,4 @@ x AdminUser -> STI (single table inheritance)
 
 ## Refactor TODOS:
 - refactor user association integration test in post-spec
--add full name thing for users
+x add full name thing for users
