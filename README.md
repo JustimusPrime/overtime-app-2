@@ -13,6 +13,8 @@ x AdminUser -> STI (single table inheritance)
 - Administrate admin dashboard
 - Email summary to managers for approval
 - Needs to be documented if employee did not log overtime
+- Block non-admin & guest users from Admin Dashboard
+
 
 ## UI:
 - Bootstrap -> formatting
