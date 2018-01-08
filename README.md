@@ -16,7 +16,7 @@ x AdminUser -> STI (single table inheritance)
 
 ## UI:
 - Bootstrap -> formatting
-- update style for forms
+x update style for forms
 - icons from font awesome
 
 ## Refactor TODOS:
