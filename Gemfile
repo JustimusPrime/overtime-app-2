@@ -60,4 +60,5 @@ gem 'jquery-ui-rails', '~> 6.0', '>= 6.0.1'
 gem "gritter", "1.2.0"
 gem 'administrate', '~> 0.8.1'
 gem 'bourbon'
+gem 'pundit', '~> 1.1'
 
