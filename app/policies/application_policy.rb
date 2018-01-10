@@ -23,7 +23,7 @@ class ApplicationPolicy
   end
 
   def update?
-    false
+    record.user_id == user.id
   end
 
   def edit?
@@ -36,6 +36,10 @@ class ApplicationPolicy
 
   def scope
     Pundit.policy_scope!(user, record.class)
+  end
+
+  def admin_types
+    ['AdminUser']
   end
 
   class Scope
