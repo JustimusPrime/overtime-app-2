@@ -21,6 +21,10 @@ x AdminUser -> STI (single table inheritance)
 x update style for forms
 - icons from font awesome
 
-## Refactor TODOS:
+## TODOS:
 - refactor user association integration test in post-spec
 x add full name thing for users
+- integrate validation for phone attribute in user
+     # have to have no spaces or dashes
+     # exactly 10 characters
+     # all characters have to be a number
