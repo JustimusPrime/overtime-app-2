@@ -1,4 +1,4 @@
-AdminUser.create(email: "test1@test.com", 
+AdminUser.create(email: "hirejustin@yahoo.com", 
                         password: "badass", 
                         password_confirmation: "badass", 
                         first_name: "Jon", 
