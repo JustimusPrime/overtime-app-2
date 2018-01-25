@@ -1,10 +1,10 @@
 require 'rails_helper'
 
 describe 'navigate' do
-  let(:user) {FactoryGirl.create(:user)}
+  let(:user) { FactoryGirl.create(:user) }
 
-  let (:post) do 
-    Post.create(date: Date.today, rationale: "Rationale", user_id: user.id, overtime_request: "2.5")
+  let(:post) do
+    Post.create(date: Date.today, rationale: "Rationale", user_id: user.id, overtime_request: 3.5)
   end
 
   before do
@@ -31,13 +31,13 @@ describe 'navigate' do
       expect(page).to have_content(/Rationale|content/)
     end
 
-    it 'has a scope so that only post creators can see their posts' do 
-      other_user = User.create(first_name: 'Non', last_name: 'Authorized', email: "nonauth@example.com", password: "asdfasdf", password_confirmation: "asdfasdf", phone: "5551231234")
+    it 'has a scope so that only post creators can see their posts' do
+      other_user = User.create(first_name: 'Non', last_name: 'Authorized', email: "nonauth@example.com", password: "asdfasdf", password_confirmation: "asdfasdf", phone: "5555555555")
       post_from_other_user = Post.create(date: Date.today, rationale: "This post shouldn't be seen", user_id: other_user.id, overtime_request: 3.5)
 
       visit posts_path
 
-      expect(page).to_not have_content(/This post shouldn't be seen/)      
+      expect(page).to_not have_content(/This post shouldn't be seen/)
     end
   end
 
@@ -78,7 +78,7 @@ describe 'navigate' do
     it 'can be created from new form page' do
       fill_in 'post[date]', with: Date.today
       fill_in 'post[rationale]', with: "Some rationale"
-      fill_in 'post[overtime_request]', with: 4.5 # Added here
+      fill_in 'post[overtime_request]', with: 4.5
 
       expect { click_on "Save" }.to change(Post, :count).by(1)
     end
@@ -86,7 +86,7 @@ describe 'navigate' do
     it 'will have a user associated it' do
       fill_in 'post[date]', with: Date.today
       fill_in 'post[rationale]', with: "User Association"
-      fill_in 'post[overtime_request]', with: 4.5 # Added here
+      fill_in 'post[overtime_request]', with: 4.5
       click_on "Save"
 
       expect(User.last.posts.last.rationale).to eq("User Association")

@@ -9,7 +9,7 @@ describe 'Homepage' do
     visit root_path
 
     click_on("approve_#{post.id}")
-
+    
     expect(post.reload.status).to eq('approved')
   end
 
@@ -23,7 +23,7 @@ describe 'Homepage' do
     visit root_path
 
     click_on("confirm_#{audit_log.id}")
-
+    
     expect(audit_log.reload.status).to eq('confirmed')
   end
 end
