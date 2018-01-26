@@ -4,7 +4,6 @@
     <% if @pending_audit_confirmations.count > 0 %>
       <div class='pending-homepage employee-blocks'>
         <h3>Pending Your Confirmation</h3>
-        <%= @pending_audit_confirmations.inspect %>
 
         <%= render partial: 'pending_audit_confirmations', locals: { pending_audit_confirmations: @pending_audit_confirmations } %>
       </div>
